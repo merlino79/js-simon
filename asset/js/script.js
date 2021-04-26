@@ -12,19 +12,45 @@
 
 $(function() {
 
+
+    //variabili
+    var arrRandom = [];
+
+    //funzioni
+
+
     function reset() {
-        printOutput('ciao sei pronto,clicca inizio', '#display');
+
         $('#btn-start').show();
         $('#btn-box').hide();
-    };
+    }; //per nascondere l'html
+
+    function printOutput(txt, target) {
+        $(target).text(txt); //funzione di print
+    }
+
+    $('#btn-start').click(function() {
+        alert('Aresenè') //richiamo il btn-start
+            // while(arrRandom.length < 5){
+
+        // };
+
+    });
 
 
+
+
+
+
+
+
+    //richiamo funzione
 
     reset();
+    printOutput('ciao clicca su inizio per giocare', '#display');
 
-    function printOutput(text, target) {
-        $(target).txt(text); //funzione di print
-    }
+
+
 
 
 
