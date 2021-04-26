@@ -7,3 +7,25 @@
 body {
     background-color: #3cb3f8;
 }
+
+#btn-start,
+#btn {
+    width: 70px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+    background-color: rgba(198, 235, 139, 0.5);
+    padding: 5px;
+}
+
+#btn-start {
+    margin-bottom: 10px;
+}
+
+#btn {
+    display: block;
+}
+
+input:focus {
+    /* outline: 0; */
+}
