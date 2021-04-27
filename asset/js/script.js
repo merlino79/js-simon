@@ -6,36 +6,14 @@
 // 	- alla fine far apparire un bottone “restart”
 // 	- all’inizio fare scegliere all’utente con quanti numeri giocare
 
-
-
-
+//variabili globali 
+var arrRandom, arruser, arrResult;
+var limit = 5;
+var secAttesa = 5;
 
 $(function() {
 
 
-    //variabili
-    var arrRandom = [];
-
-    //funzioni
-
-
-    function reset() {
-
-        $('#btn-start').show();
-        $('#btn-box').hide();
-    }; //per nascondere l'html
-
-    function printOutput(txt, target) {
-        $(target).text(txt); //funzione di print
-    }
-
-    $('#btn-start').click(function() {
-        alert('Aresenè') //richiamo il btn-start
-            // while(arrRandom.length < 5){
-
-        // };
-
-    });
 
 
 
@@ -44,10 +22,6 @@ $(function() {
 
 
 
-    //richiamo funzione
-
-    reset();
-    printOutput('ciao clicca su inizio per giocare', '#display');
 
 
 
@@ -55,3 +29,12 @@ $(function() {
 
 
 });
+
+
+//creo una funzione reset per gestire il punto di partenza
+
+function reset() {
+    arrRandom = [];
+    arruser = [];
+    arrResult = [];
+}
