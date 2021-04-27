@@ -136,7 +136,10 @@ $(function() {
 
 
     $('#restart').click(function() {
-        console.log('bottone restart');
+        //console.log('bottone restart');
+        reset(); // richiamo della funzione reset
+
+
     });
 
 
@@ -160,6 +163,8 @@ $(function() {
 //creo una funzione reset per gestire il punto di partenza
 
 function reset() {
+    limit = parseInt(prompt('Scegli quanti numeri inserire'));
+
     arrRandom = [];
     arrUser = [];
     arrResult = [];
