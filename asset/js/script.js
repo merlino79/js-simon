@@ -8,24 +8,44 @@
 
 
 //variabili globali 
-var arrRandom, arruser, arrResult;
+var arrRandom, arrUser, arrResult;
 var limit = 5;
 var secAttesa = 5;
+//
 
 $(function() {
 
     //richiamato la mia funzione reset la funzione
     reset();
 
-    $('#start').click(function() {
-        console.log('bottone start');
+
+    while (arrRandom.lenght < limit) {
+        var nr = generatorRandomNumber(1, 100);
+        arrRandom.push(nr);
+        console.log(arrRandom); //non stampa i numeri
+
+
+
+    };
+    console.log(arrRandom); //non stampa i numeri
+
+
+
+
+
+
+    $('#start').click(function() {;
+
+
+
+
     });
 
-    $('#start').click(function() {
+    $('#restart').click(function() {
         console.log('bottone restart');
     });
 
-    $('#start').click(function() {
+    $('#send-number').click(function() {
         console.log('bottone send-number');
     });
 
@@ -51,7 +71,7 @@ $(function() {
 
 function reset() {
     arrRandom = [];
-    arruser = [];
+    arrUser = [];
     arrResult = [];
     printDisplay('per iniziare a giocare premero invio');
     $('#display').show();
@@ -60,6 +80,11 @@ function reset() {
     $('#console').hide();
 
 }
+//funzione generatore di numeri
+function generatorRandomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min) + 1) + min;
+};
+
 
 //fiìunziona stampa
 function printDisplay(text) {
