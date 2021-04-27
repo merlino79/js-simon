@@ -19,22 +19,45 @@ $(function() {
     reset();
 
 
-    while (arrRandom.lenght < limit) {
-        var nr = generatorRandomNumber(1, 100);
-        arrRandom.push(nr);
-        console.log(arrRandom); //non stampa i numeri
-
-
-
-    };
-    console.log(arrRandom); //non stampa i numeri
 
 
 
 
 
 
-    $('#start').click(function() {;
+
+
+
+
+
+
+    $('#start').click(function() {
+        while (arrRandom.length < limit) {
+            console.log(arrRandom);
+
+
+            var nr = generatorRandomNumber(1, 100);
+            arrRandom.push(nr);
+            if (!arrRandom.includes(nr)) arrRandom.push(nr); //serve per non fare ripetere i numeri
+            printDisplay('i numeri sono: ' + arrRandom.join('-')); //stampo a video i numeri e aggiungendo .join (sistemo i numeri con - )
+
+
+
+            setTimeout(function() {
+                printDisplay('Inserisci ' + limit + ' numeri.');
+                $('#console').show();
+                $('#start').hide();
+            }, secAttesa * 1000); //funzione di attesa 
+
+
+
+
+
+
+
+
+        };
+        //console.log(arrRandom);
 
 
 
