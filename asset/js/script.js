@@ -10,7 +10,7 @@
 //variabili globali 
 var arrRandom, arrUser, arrResult;
 var limit = 5;
-var secAttesa = 5;
+var secAttesa = 3; //
 //
 
 $(function() {
@@ -29,7 +29,7 @@ $(function() {
 
 
 
-
+    //prima parte
 
     $('#start').click(function() {
         while (arrRandom.length < limit) {
@@ -42,12 +42,13 @@ $(function() {
             printDisplay('i numeri sono: ' + arrRandom.join('-')); //stampo a video i numeri e aggiungendo .join (sistemo i numeri con - )
 
 
-
+            $('#start').hide(); //è stato messo fuori dalla funzione se no scopmare dopo che escono i numeri
             setTimeout(function() {
                 printDisplay('Inserisci ' + limit + ' numeri.');
+
                 $('#console').show();
-                $('#start').hide();
-            }, secAttesa * 1000); //funzione di attesa 
+
+            }, secAttesa * 1000); //funzione di attesa //
 
 
 
@@ -64,12 +65,78 @@ $(function() {
 
     });
 
-    $('#restart').click(function() {
-        console.log('bottone restart');
-    });
+    //seconda parte
 
     $('#send-number').click(function() {
-        console.log('bottone send-number');
+        //console.log('bottone send-number');
+        //console.log($('input').val()); //premendo sul bottone invia mi restituisce alla consol.log i numeri premuti
+        // arrUser.push($('input').val())
+        // console.log(arrUser); //verifico alla consol i numeri aggiunti premendo il bottone invia
+        if (arrUser.length < limit) {
+            // impedisco i numeri doppi e ti avverto
+            if (arrUser.includes($('input').val())) {
+                printDisplay('Attenzione numero già inserito');
+            } else {
+                // inserimento ocrretto con output
+                arrUser.push($('input').val());
+                printDisplay('Numeri inseriti: ' + arrUser.join(' - '));
+            }
+        }
+        if (arrUser.length === limit) {
+
+            for (var num of arrUser) {
+                console.log(num);
+                if (arrRandom.includes(parseInt(num))) {
+                    arrResult.push(num);
+                } //ciclato il mio arraay e l'ho confrontato con i suoi numero e ho catturato i numeri corrispondenti
+                console.log(arrResult);
+
+            } //ciclo 
+
+
+            setTimeout(function() {
+                //console.log('fine');
+                printDisplay('Attesa');
+                $('#console').hide();
+
+
+
+
+            }, 500);
+
+            setTimeout(function() {
+                //console.log('fine');
+                printDisplay('il risultato è :');
+                $('#console').hide();
+                if (arrResult.length === 0) {
+                    printDisplay('Hai perso!')
+                } else if (arrResult.length === limit) {
+                    printDisplay('Hai vinto');
+                } else {
+                    printDisplay('Hai indovinato questi numeri: ' + arrResult.join(' - '));
+                }
+                $('#restart').show();
+
+
+
+
+            }, 2500);
+
+
+
+        }
+
+        $('input').val('');
+        $('input').focus();
+
+
+
+    });
+
+
+
+    $('#restart').click(function() {
+        console.log('bottone restart');
     });
 
 
