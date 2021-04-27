@@ -6,12 +6,28 @@
 // 	- alla fine far apparire un bottone “restart”
 // 	- all’inizio fare scegliere all’utente con quanti numeri giocare
 
+
 //variabili globali 
 var arrRandom, arruser, arrResult;
 var limit = 5;
 var secAttesa = 5;
 
 $(function() {
+
+    //richiamato la mia funzione reset la funzione
+    reset();
+
+    $('#start').click(function() {
+        console.log('bottone start');
+    });
+
+    $('#start').click(function() {
+        console.log('bottone restart');
+    });
+
+    $('#start').click(function() {
+        console.log('bottone send-number');
+    });
 
 
 
@@ -37,4 +53,15 @@ function reset() {
     arrRandom = [];
     arruser = [];
     arrResult = [];
+    printDisplay('per iniziare a giocare premero invio');
+    $('#display').show();
+    $('#start').show();
+    $('#restart').hide();
+    $('#console').hide();
+
+}
+
+//fiìunziona stampa
+function printDisplay(text) {
+    $('#display').text(text);
 }
