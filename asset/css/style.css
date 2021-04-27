@@ -1,31 +1,32 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background-color: #3cb3f8;
-}
-
-#btn-start,
-#btn {
-    width: 70px;
-    border-radius: 10px;
-    cursor: pointer;
-    margin-top: 20px;
-    background-color: rgba(198, 235, 139, 0.5);
-    padding: 5px;
-}
-
-#btn-start {
-    margin-bottom: 10px;
-}
-
-#btn {
-    display: block;
-}
-
-input:focus {
-    /* outline: 0; */
-}
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        background-color: #3cb3f8;
+    }
+    
+    .container {
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    #display {
+        margin-top: 50px;
+    }
+    
+    button {
+        width: 100px;
+        border-radius: 7px;
+        cursor: pointer;
+        background-color: rgba(198, 235, 139, 0.5);
+        padding: 3px;
+        margin-top: 20px;
+    }
+    
+    input:focus {
+        /* outline: 0; */
+    }
